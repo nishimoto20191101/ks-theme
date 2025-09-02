@@ -1,0 +1,114 @@
+/* 値をセット(デフォルト値で問題ないときは削除またはコメントアウト推奨) */
+:root{
+  --padding-std:6rem;/* paddingの基準値 */
+  /* common color */
+  --color-black:#000;/* var(--color-black) */
+  --color-gray:#bfbfbf;/* var(--color-gray) */
+  --color-red:#f00;/* var(--color-red) */
+  --color-orange:#ed7d31;/* var(--color-orange) */
+  --color-blue:#0852a0;/* var(--color-blue) */
+  --color-green:#61adb2;/* var(--color-green) */
+  --color-gold:#cec556;/* var(--color-gold) */
+  --color-font:var(--color-black);/* fontの基本色 */
+  --color-primary:#000;/* var(--color-primary) */
+  --color-secondary:#888;/* var(--color-secondary) */
+  --color-tertiary:#666;/* var(--color-tertiary) */
+  --color-quaternary:#444(52, 134, 52, 1);/* var(--color-quaternary) */
+  /* body */
+  --font-mincho:"Crimson Text", Georgia, "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "HGS明朝E", "Noto Serif JP", "メイリオ", Meiryo, serif;
+  --font-gothic:-apple-system,BlinkMacSystemFont,"Noto Sans JP",Manrope,"游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-body:var(var(--font-gothic));
+  --fontsize-base:min(4vw,16px); /* 文字サイズ */
+  --line-height:1.5;/*文字の高さ*/
+  --color-body-bg:#fff;/*背景色*/
+  --padding-body:0;/* bodyのpadding */
+  /* header */
+  --position-header:fixed;/* header potison  固定：absolute 追尾：fiexd*/
+  --position-header-active:fixed;/* header.active potison  固定：absolute 追尾：fiexd*/
+  --height-header:100px;/* headerの高さ */
+  --color-header:inherit;/* headerの文字色 */
+  --color-header-bg:transparent;/* header背景色 */
+  --color-header-bg-active:var(--color-header-bg);/* header.active背景色 */
+  /* footer */
+  --color-footer:inherit;/* footer文字色 */
+  --color-footer-bg:inherit;/* footer背景色 */
+  --padding-footer:calc( var(--padding-std) / 2 ) 0;/* footer>.inner padding */
+  /* copyright */
+  --color-copyright:inherit;/* footer文字色 */
+  --color-copyright-bg:inherit;/* footer背景色 */
+  --padding-copyright:calc( var(--padding-std) / 4 ) 0;/* .copyright padding */
+  /* burger menu */
+  --color-burger-bar:var(--color-primary);/* バーガー三点リーダ色 */
+  --color-burger-bar-bg:transparent;/* バーガー三点リーダ背景色 */
+  --color-burger-content:currentColor;/* バーガー文字色 */
+  --color-burger-content-bg:#fff;/* バーガー背景色 */
+  --padding-burger:18px;/* バーガー上下のpadding */
+  --with-burger-bar:22px;/* バーガー三点リーダ幅 */
+  --height-burger-bar:2px;/*バーガー三点リーダ太さ*/
+  --space-burger-bar:7px;/*バーガー三点リーダ間隔*/
+  --height-burger:calc( ( var(--padding-burger) + var(--space-burger-bar) + var(--height-burger-bar) ) * 2 );/*バーガー三点リーダ高さ*/
+  /* toggle */
+  --color-toggle-bar:var(--color-primary);
+  /* zoom button */
+  --color-zoom:var(--color-primary);
+  /* #content */
+  --padding-content-top:var(--height-header);/*コンテンツの表示開始位置をpaddingで調整*/
+  --width-secondary:280px;/* secondary横並びの際の幅 */
+  /* #content section */
+  --padding-section-primary:var(--padding-std) 0;/* #content primary sectionのpadding */
+  --padding-section-secondary:0 0 calc( var(--padding-std) / 2 );
+  /* .obj */
+  --margin-obj:0 0 calc( var(--padding-std) / 4 );
+  --padding-obj:calc( var(--padding-std) / 4 ) 0;
+  /* .prop */
+  --margin-prop:0 0 calc( var(--padding-std) / 6 );
+  --padding-prop:calc( var(--padding-std) / 6 ) 0;
+  /* .list */
+  --margin-list:0 0;/* .listの下マージン */
+  --padding-list:0 0;/* .listの下マージン */
+  --margin-obj-list:0 0 calc( var(--padding-std) / 2 );/* .list>.objのマージン */
+  --padding-obj-list:0 0 calc( var(--padding-std) / 2 );/* .list>.objのパディング */
+  /* .nodata */
+  --text-nodata:'登録記事はございません。';/* 疑似要素コンテント */
+  /* .loading */
+  --text-loading:'now loading...';/* 疑似要素コンテント */
+  /* アニメーション基準時間 */
+  --time-anime:.3s;
+  /* ページ表示フェードイン時間 */
+  --time-body:2s;
+}
+/*headerの高さ*/
+@media screen and (min-width:1100px){
+  :root {
+    --height-header:100px;
+  }
+}
+@media screen and (max-width:1100px){
+  :root {
+    --height-header:50px;
+  }
+}
+/*footerのpadding*/
+@media screen and (min-width:600px){
+  :root {
+    --padding-footer:3rem 0 1rem;
+    --padding-copyright:1rem 0;
+  }
+}
+@media screen and (max-width:600px){
+  :root {
+    --padding-footer:2rem 0 1rem;
+    --padding-copyright:1rem 0;
+  }
+}
+
+/****************** 画面比率別調整 ******************/
+@media screen and (orientation: landscape){/* 横長 */}
+@media screen and (orientation: portrait){/* 縦長 */}
+
+/****************** ブラウザ別調整 ******************/
+@supports (-ms-ime-align: auto){/*Edge only*/}
+@media all and (-ms-high-contrast: none){/*IE only*/}
+@-moz-document url-prefix(){/*Firefox only*/}
+@media screen and (-webkit-min-device-pixel-ratio:0){/*Chorome only*/}
+::-webkit-full-page-media, :future, :root /*セクタ「bodyなど]*/{/* Safari or iOS Chrome */}

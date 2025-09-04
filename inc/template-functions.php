@@ -72,6 +72,13 @@ add_filter('wp_title', function($title, $sep, $seplocation) {
     }
     return $title;
 }, 10, 3);
+//アップロード先を変更
+/*add_filter( 'upload_dir', function( $upload ){
+	$folder = '/uploads';
+    $upload['basedir'] = WP_CONTENT_DIR .$folder; // アップロード先ディレクトリ名
+    $upload['baseurl'] = WP_CONTENT_URL .$folder; // URL
+    return $upload;
+});*/
 
 // 記事の自動整形を無効化
 //remove_filter('the_content', 'wpautop');

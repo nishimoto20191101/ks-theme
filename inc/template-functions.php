@@ -74,9 +74,9 @@ add_filter('wp_title', function($title, $sep, $seplocation) {
 }, 10, 3);
 //アップロード先を変更
 /*add_filter( 'upload_dir', function( $upload ){
-	$folder = '/uploads';
-    $upload['basedir'] = WP_CONTENT_DIR .$folder; // アップロード先ディレクトリ名
-    $upload['baseurl'] = WP_CONTENT_URL .$folder; // URL
+	$folder = 'uploads';
+    $upload['basedir'] = ABSPATH.$folder; // アップロード先ディレクトリ名
+    $upload['baseurl'] = get_site_url(null, '/').$folder; // URL
     return $upload;
 });*/
 

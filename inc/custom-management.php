@@ -16,7 +16,7 @@ HTML;
 add_filter( 'login_headerurl', function(){return get_bloginfo( 'url' );});
 // ロゴのtitleテキストを指定
 add_filter( 'login_headertitle', function(){return get_option( 'blogname' );});
-//管理画面メニュー編集
+//管理画面サイドメニュー編集
 add_action('admin_menu', function(){
   global $menu, $submenu;
   add_menu_page( 'すべての投稿', 'すべての投稿', 'manage_options',  'all',  'disp_all_posts_content',  'dashicons-menu-alt3', 3);
@@ -24,8 +24,10 @@ add_action('admin_menu', function(){
   add_submenu_page('themes.php', '追加CSS例', '※追加CSS例', 'read', 'disp_sample_add_css', 'disp_sample_add_css', 'disp_sample_add_css', 21);
   add_submenu_page('themes.php', 'ウィジェットエリア', '※ウィジェットエリア', 'read', 'disp_widget_layout', 'disp_widget_layout', 'disp_widget_layout', 22);
   //サブメニュー並び替え
-  $themes_menu = $submenu['themes.php']; //print_r($submenu['themes.php']);
-  $submenu['themes.php'] = [ $themes_menu[5], $themes_menu[7], $themes_menu[21], $themes_menu[8], $themes_menu[22], $themes_menu[10] ];
+  if(current_user_can('administrator')){
+    $themes_menu = $submenu['themes.php']; //print_r($submenu['themes.php']);
+    $submenu['themes.php'] = [ $themes_menu[5], $themes_menu[7], $themes_menu[21], $themes_menu[8], $themes_menu[22], $themes_menu[10] ];  
+  }
 });
 if(! function_exists( 'ks_header_style')){
 	function ks_header_style(){
@@ -41,6 +43,11 @@ if(! function_exists( 'ks_header_style')){
 		echo '</style>';
 	}
 }
+//管理画面ヘッダメニュー編集
+add_action('admin_bar_menu', function() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('new-content'); // 「新規」メニューを削除
+}, 999);
 // すべての投稿一覧表示
 function disp_all_posts_content() {
   require get_template_directory().'/inc/class.WP_All_Posts_List_Table.php';

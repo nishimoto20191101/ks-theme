@@ -18,15 +18,15 @@ add_filter( 'login_headerurl', function(){return get_bloginfo( 'url' );});
 add_filter( 'login_headertitle', function(){return get_option( 'blogname' );});
 //管理画面サイドメニュー編集
 add_action('admin_menu', function(){
-  global $menu, $submenu;
-  add_menu_page( 'すべての投稿', 'すべての投稿', 'manage_options',  'all',  'disp_all_posts_content',  'dashicons-menu-alt3', 3);
-  add_options_page( 'カスタム投稿タイプ', 'カスタム投稿タイプ', 'manage_options',  'ks_post_type',  'disp_custom_post_type_content', 3);
-  add_submenu_page('themes.php', '追加CSS例', '※追加CSS例', 'read', 'disp_sample_add_css', 'disp_sample_add_css', 'disp_sample_add_css', 21);
-  add_submenu_page('themes.php', 'ウィジェットエリア', '※ウィジェットエリア', 'read', 'disp_widget_layout', 'disp_widget_layout', 'disp_widget_layout', 22);
-  //サブメニュー並び替え
   if(current_user_can('administrator')){
-    $themes_menu = $submenu['themes.php']; //print_r($submenu['themes.php']);
-    $submenu['themes.php'] = [ $themes_menu[5], $themes_menu[7], $themes_menu[21], $themes_menu[8], $themes_menu[22], $themes_menu[10] ];  
+	global $menu, $submenu;
+	add_menu_page( 'すべての投稿', 'すべての投稿', 'manage_options',  'all',  'disp_all_posts_content',  'dashicons-menu-alt3', 3);
+	add_options_page( 'カスタム投稿タイプ', 'カスタム投稿タイプ', 'manage_options',  'ks_post_type',  'disp_custom_post_type_content', 3);
+	add_submenu_page('themes.php', '追加CSS例', '※追加CSS例', 'read', 'disp_sample_add_css', 'disp_sample_add_css', 'disp_sample_add_css', 21);
+	add_submenu_page('themes.php', 'ウィジェットエリア', '※ウィジェットエリア', 'read', 'disp_widget_layout', 'disp_widget_layout', 'disp_widget_layout', 22);
+	//サブメニュー並び替え
+	$themes_menu = $submenu['themes.php']; //print_r($submenu['themes.php']);
+	$submenu['themes.php'] = [ $themes_menu[5], $themes_menu[7], $themes_menu[21], $themes_menu[8], $themes_menu[22], $themes_menu[10] ];  
   }
 });
 if(! function_exists( 'ks_header_style')){

@@ -129,28 +129,6 @@ HTML;
     $thumbnail = !empty($ks_post_types->$key->thumbnail) || !empty($new) ? " checked" : "";
     $archive   = !empty($ks_post_types->$key->archive)   || !empty($new) ? " checked" : "";
     $public    = !empty($ks_post_types->$key->public)    || !empty($new) ? " checked" : "";
-    $layput__html = "";
-    if(!empty($key)){
-      $layput__html =<<<HTML
-    <h3>{$key}用ウィジェットエリア</h3>
-    <p>以下の構成でウィジェットエリアが配置されます。<br>
-      ※[]内の文字列がウィジェットエリア名です。<br>
-      ウィジェットエリア内に設定がない場合は「{$key}」を削除した名称のウィジェットエリアが適用されます。
-    </p> 
-    <div class="ks_layout">
-        <div style="flex-basis:100%">header</div>
-        <div class="widget" style="flex-basis:100%">[{$key} Contant main]</div>
-        <div style="flex:1">
-          <div class="widget">[{$key} Content top]</div>
-          <div style="line-height:4em">投稿内容</div>
-          <div class="widget">[{$key} Content bottom]</div>
-        </div>
-        <div class="widget" style="flex-basis:20%"><span style="display:block;position:relative;top:50%;transform:translateY(-50%)">[{$key} Sidebar]</span></div>
-        <div class="widget" style="flex-basis:100%">[{$key} Content footer]</div>
-        <div style="flex-basis:100%">footer</div>
-    </div>
-HTML;
-    }
     $key_name = !empty($key) ? $key : "[カスタム投稿名]";
     $result =<<<HTML
       <form action="?page=ks_post_type" method="post" style="padding-top:1em">
@@ -177,7 +155,6 @@ HTML;
     <ul style="margin-bottom:2rem">
         <li>・カスタム投稿名は登録後に変更できません。</li>
     </ul>
-{$layput__html}
 <style>
   form dl{display:flex;flex-wrap:wrap;max-width:100%;width:80em}
   form dt{width:9.5em;padding-top:10px;margin:7px 0}
@@ -185,9 +162,6 @@ HTML;
   form dd>span{display:inline-block;padding:5px 10px}
   form dd label+label{margin-left:1rem}
   input[type="text"]{padding:5px 10px!important;}
-  .ks_layout{display:flex;flex-wrap:wrap;max-width:100%;width:60em;text-align:center}
-  .ks_layout div{border:1px #000 solid;line-height:3em;margin:5px}
-  .ks_layout .widget{background-color:#e0e0e0}
 </style>
 <script>
   jQuery('input[name="key"]').on('blur',function(){

@@ -15,7 +15,7 @@ echo <<<HTML
 <header>
   <div class="inner flex between align-center">
     <a href="{$site_url}" class="logo" aria-label="HOME">{$logo__html}</a>
-      <div id="nav-drawer">
+    <div id="nav-drawer">
       <label id="nav-open" for="nav-input"><span></span><div></div></label>
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content"><div class="nav">

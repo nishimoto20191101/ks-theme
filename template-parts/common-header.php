@@ -13,15 +13,17 @@ if( !empty($common_disp['logo']) ){
 echo <<<HTML
 <input id="nav-input" type="checkbox" class="nav-unshown">
 <header>
-  <label id="nav-open" for="nav-input"><span></span><div></div></label>
-  <div id="nav-drawer">
-    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-    <div id="nav-content"><div class="nav">
+  <div class="inner flex between align-center">
+    <a href="{$site_url}" class="logo" aria-label="HOME">{$logo__html}</a>
+      <div id="nav-drawer">
+      <label id="nav-open" for="nav-input"><span></span><div></div></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content"><div class="nav">
 HTML;
 wp_nav_menu(['theme_location' => 'header']);
 echo <<<HTML
-    </div></div>
-  </div>
+      </div></div>
+    </div>
 HTML;
 if(is_active_sidebar('header')){
   echo '<div class="insert">';
@@ -29,8 +31,6 @@ if(is_active_sidebar('header')){
   echo '</div>';
 } 
 echo <<<HTML
-  <div class="inner flex between align-center">
-    <a href="{$site_url}" class="logo" aria-label="HOME">{$logo__html}</a>
   </div>
 </header>
 HTML;

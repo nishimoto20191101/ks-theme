@@ -137,7 +137,7 @@ h1,h2,h3,h4,h5{line-height:1.5;margin-bottom:1.5rem;margin-top:0}
 .image img{display:block}
 .image.center>img{position:absolute;top:50%;left:50%;translate:-50% -50%}
 .noimage{background:#f7f7f7 no-repeat center center / contain;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.noimage::before{content:"";display:block;width:100%;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}
+.noimage::before{content:"";display:block;width:100%;text-align:center;position:absolute;top:50%;translate:0 -50%}
 /* youtube */
 .youtube{width:100%;aspect-ratio:16 / 9} .youtube iframe{width:100%;height:100%} .youtube img, .youtube video{width:auto;height:auto;max-height:100%}
 /* パララックス */
@@ -361,8 +361,8 @@ header .logo img{display:block;width:auto;max-height:100%;-webkit-transition:all
   .burger-on{display:none!important}
   .nav-content-close{display:none}
   header .inner{width:94%;margin:0 auto;height:100%}
-  #nav-drawer{position:absolute;top:0;left:50%;height:100%;transform:translateX(-50%)}
-  #nav-content{text-align:center;position:absolute;top:50%;left:50%;translate:-50% -50%}
+  #nav-drawer{position:absolute;top:0;left:50%;height:100%}
+  #nav-content{text-align:center;position:absolute;top:50%;transform:translateY(-50%)}
   #nav-content ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center}
   #nav-open{display:none}
 }

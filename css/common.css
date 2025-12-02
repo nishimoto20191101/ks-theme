@@ -121,7 +121,7 @@ blockquote *{margin-bottom:0}
 .png-white{-webkit-filter:brightness(0) invert(1);filter:brightness(0) invert(1)}/*png画像の透過以外を白*/
 .png-black{-webkit-filter:brightness(0) invert(0);filter:brightness(0) invert(0)}/*png画像の透過以外を黒*/
 /* コンテンツ枠 */
-#content{position:relative;padding-top:var(--padding-content-top);width:100%;overflow:hidden}
+#content{position:relative;padding-top:var(--padding-content-top);width:100%;contain:paint}
 #title{background:#f9f9f9;display:block;margin:0 auto;padding:15vh 0 ;line-height:2rem}
 #content .detail{margin:0 auto;position:relative}
 .inner{margin-left:auto;margin-right:auto;width:92%;max-width:1224px}
@@ -321,7 +321,7 @@ header a, header label{pointer-events:auto}
 header .logo{position:relative;z-index:1000}
 header .logo img{display:block;max-height:100%;-webkit-transition:all var(--time-anime);transition:all var(--time-anime)}
 .nav-unshown{display:none}
-.nav, .nav li{padding:0;margin:0;position:relative}
+.nav, .nav li{padding:0;margin:0}
 #nav-content .nav-content-close{display:none}
 #nav-content ul{padding:0;list-style:none}
 #nav-content .menu li a{display:block;white-space:nowrap;position:relative;overflow:hidden}
@@ -360,7 +360,7 @@ header .logo img{display:block;max-height:100%;-webkit-transition:all var(--time
   .burger-on{display:none!important}
   .nav-content-close{display:none}
   header .inner{width:94%;margin:0 auto;height:100%}
-  #nav-content{text-align:center;position:relative}
+  #nav-content{text-align:center}
   #nav-content ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center}
   #menu-header{margin:0}
   #nav-open{display:none}

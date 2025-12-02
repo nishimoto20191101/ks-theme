@@ -320,7 +320,6 @@ header .inner{max-height:100%;margin:0 auto;position:absolute;top:50%;left:50%;t
 header a, header label{pointer-events:auto}
 header .logo{position:relative;z-index:1000}
 header .logo img{display:block;width:auto;max-height:100%;-webkit-transition:all var(--time-anime);transition:all var(--time-anime)}
-#nav-drawer{position:relative;z-index:999}
 .nav-unshown{display:none}
 .nav, .nav li{padding:0;margin:0;position:relative}
 #nav-content .nav-content-close{display:none}
@@ -346,6 +345,7 @@ header .logo img{display:block;width:auto;max-height:100%;-webkit-transition:all
   #nav-open span:after{translate:0 var(--space-burger-bar)}
   #nav-open div{position:absolute;left:0;bottom:2px;font-size:.6rem;text-align:center;width:100%}
   #nav-content{padding-top:var(--height-header);background-color:var(--color-burger-content-bg);color:var(--color-burger-content);width:100vw;height:100vh;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;overflow:auto;position:fixed;right:0;top:0;text-align:left;z-index:995;transition:ease-in-out var(--time-anime);-webkit-transform:translateX(105%);transform:translateX(105%);/*右に隠しておく*/}
+  #nav-drawer{position:absolute;top:0;right:0;width:100%;z-index:999}
   #nav-input:checked ~ header #nav-drawer{position:fixed}
   #nav-input:checked ~ header #nav-drawer #nav-close{display:block;opacity:.5}
   #nav-input:checked ~ header #nav-drawer #nav-open{background-image:none;background-color:transparent}

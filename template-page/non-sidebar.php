@@ -19,9 +19,9 @@ if( !in_array($post_type,["page", "single"]) && is_active_sidebar("{$post_type}_
 	echo '</section>';
 }
 
-if( function_exists('yoast_breadcrumb') ){
+/*if( function_exists('yoast_breadcrumb') ){
 	yoast_breadcrumb( '<div id="breadcrumbs" class="inner">','</div>' );
-}
+}*/
 echo <<<HTML
   <div id="{$post->ID}" class="inner">
     <aside id="primary">

@@ -83,7 +83,7 @@
     --height-header:100px;
   }
 }
-@media screen and (max-width:1100px){
+@media screen and (max-width:1009px){
   :root {
     --height-header:50px;
   }

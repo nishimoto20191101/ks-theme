@@ -122,8 +122,6 @@ blockquote *{margin-bottom:0}
 .png-black{-webkit-filter:brightness(0) invert(0);filter:brightness(0) invert(0)}/*png画像の透過以外を黒*/
 /* コンテンツ枠 */
 #content{position:relative;padding-top:var(--padding-content-top);width:100%;contain:paint}
-#title{background:#f9f9f9;display:block;margin:0 auto;padding:15vh 0 ;line-height:2rem}
-#content .detail{margin:0 auto;position:relative}
 .inner{margin-left:auto;margin-right:auto;width:92%;max-width:1224px}
 /*タイトル*/
 h1,h2,h3,h4,h5{line-height:1.5;margin-bottom:1.5rem;margin-top:0}
@@ -291,7 +289,6 @@ body{-webkit-text-size-adjust:100%;/* 文字がはみ出ない対策 */} button{
 @media screen and (max-width:600px){
   .over-600w{display:none!important}  .pc-only{display:none!important}  .tb-only{display:none!important} 
   /*body{font-size:4vw}*/
-  /* コンテンツ枠 */ #content .detail{width:98%}
   /* 一覧ページ ページング */ .listNavi li{flex-basis:10vw;height:10vw;margin:0 0.5vw;line-height:10vw}
   .list.half>*, .flex.half>*, .list.three>*{flex-basis:100%}
   .list.four>*{flex-basis:49%}

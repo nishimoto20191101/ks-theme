@@ -8,6 +8,7 @@
 get_header();
 echo <<<HTML
     <aside id="primary">
+      <div id="tinymce" class="entry-content">
 HTML;
 $post_type = get_post_type();
 while ( have_posts() ) : the_post();
@@ -29,6 +30,7 @@ while ( have_posts() ) : the_post();
   endif;
 endwhile;
 echo <<<HTML
+      </div>
     </aside>
 HTML;
 get_footer();

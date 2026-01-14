@@ -9,16 +9,17 @@
 get_header();
 /*remove_filter ('the_content', 'wpautop');   //pタグ対策
 the_content();*/
+echo'   <div id="tinymce" class="entry-content">';
 while ( have_posts() ) : the_post();
   the_content( sprintf(
     wp_kses(
       /* translators: %s: Name of current post. Only visible to screen readers */
       __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ks' ),
-      array(
-        'span' => array(
-          'class' => array(),
-        ),
-      )
+      [
+        'span' => [
+          'class' => [],
+        ],
+      ]
     ),
     get_the_title()
   ) );
@@ -27,6 +28,6 @@ while ( have_posts() ) : the_post();
     comments_template();
   endif;
 endwhile;
-
+echo '</div>';
 get_footer();
 
